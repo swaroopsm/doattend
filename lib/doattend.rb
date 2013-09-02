@@ -1,6 +1,4 @@
 require "doattend/version"
-require "rest-client"
-require "yaml"
 
 module Doattend
 
