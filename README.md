@@ -1,6 +1,6 @@
-# Doattend
+# DoAttend
 
-TODO: Write a gem description
+Rails generator and functions to communicate the DoAttend API.
 
 ## Installation
 
