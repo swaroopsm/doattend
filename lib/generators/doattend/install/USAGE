@@ -1,0 +1,8 @@
+Description:
+    Generates a config file called doattend.yml
+
+Example:
+    rails generate doattend:install -e DOATTEND_EVENT_ID -k DOATTEND_API_KEY
+
+    This will create:
+        config/doattend.yml
