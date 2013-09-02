@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["swaroop.striker@gmail.com"]
   spec.description   = %q{Communicating with DoAttend API}
   spec.summary       = %q{This provides a rails generator and functions to communicate with the DoAttend API.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/swaroopsm/doattend"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
