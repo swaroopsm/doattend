@@ -8,7 +8,7 @@ module Doattend
 			class_option :k, :type => :string, :required => true, :desc => "Specify DoAttend API key", :banner => "YOUR_DOATTEND_API_KEY"
 
 			def generate_config
-				template "doattend.rb", "#{Rails.root}/config/doattend.yml"
+				template "doattend.erb", "#{Rails.root}/config/doattend.yml"
 			end
 
 		end
