@@ -25,7 +25,7 @@ Run the following generator to generate config/doattend.yml
 
 ## Methods
 ### 1. Fetch all data from DoAttend:
-				$ Doattend.fetch
+		$ Doattend.fetch
 
 ## Contributing
 
