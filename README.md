@@ -29,17 +29,29 @@ Run the following generator to generate config/doattend.yml
 If you are not using Rails you can use require to include it:
 		$ require "doattend"
 
-## Create an object of Doattend
-		Rails Way:
+## Getting Started
+Rails Way:
 		@doattend = Doattend::Base.new # This loads the key and event that was generated from config/doattend.yml
 
-		Non-Rails Way:
+Non-Rails Way:
 		@doattend = Doattend::Base.new('YOUR_DOATTEND_EVENT_ID', 'YOUR_DOATTEND_API_KEY')
 
 
 ## Methods
-### 1. Fetch all data from DoAttend:
+#### Fetch all data from DoAttend
 		@doattend.fetch
+
+#### Get total tickets
+		@doattend.aggregate
+
+#### Get ticket names/types used in an event
+		@doattend.ticket.names
+
+#### Get total number of registrations for a ticket name/type
+		@doattend.ticket.aggregate('ticket_type')
+
+		Eg.:
+		@doattend.ticket.aggregate(@doattend.ticket.names.first)
 
 ## Contributing
 
