@@ -1,5 +1,7 @@
 # DoAttend
 
+[![Gem Version](https://badge.fury.io/rb/doattend.png)](http://badge.fury.io/rb/doattend)
+
 Rails generator and functions to communicate the DoAttend API. You need to have a DoAttend API key to communicate the DoAttend API. If you do not have one yet, you can contact DoAttend to get an API key.
 
 ## Installation
