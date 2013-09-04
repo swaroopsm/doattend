@@ -12,6 +12,11 @@ module Doattend
 		def names
 			self.result.map{ |t| t['Ticket_Name'] }.uniq
 		end
+		
+		# Returns number of registrations for a ticket type
+		def aggregate(name)
+			self.result.count{ |t| t['Ticket_Name'] == name }
+		end
 
 	end
 
