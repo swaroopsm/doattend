@@ -31,27 +31,35 @@ If you are not using Rails you can use require to include it:
 
 ## Getting Started
 		Rails Way:
-		@doattend = Doattend::Base.new # This loads the key and event that was generated from config/doattend.yml
+		doattend = Doattend::Base.new # This loads the key and event that was generated from config/doattend.yml
 
 		Non-Rails Way:
-		@doattend = Doattend::Base.new('YOUR_DOATTEND_EVENT_ID', 'YOUR_DOATTEND_API_KEY')
+		doattend = Doattend::Base.new('YOUR_DOATTEND_EVENT_ID', 'YOUR_DOATTEND_API_KEY')
 
 
 ## Methods
+### Tickets
 #### Fetch all data from DoAttend
-		@doattend.fetch
+		doattend.fetch
 
 #### Get total tickets
-		@doattend.aggregate
+		doattend.aggregate
 
 #### Get ticket names/types used in an event
-		@doattend.ticket.names
+		doattend.ticket.names
 
 #### Get total number of registrations for a ticket name/type
-		@doattend.ticket.aggregate('ticket_type')
+		doattend.ticket.aggregate('ticket_type')
 
 		Eg.:
-		@doattend.ticket.aggregate(@doattend.ticket.names.first)
+		doattend.ticket.aggregate(doattend.ticket.names.first)
+
+### Participants
+#### Pluck a field from all all participants
+		doattend.participant.pluck('FIELD_NAME')
+
+		Eg.:
+		doattend.participant.plcuk('Gender')
 
 ## Contributing
 
