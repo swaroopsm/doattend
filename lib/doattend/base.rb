@@ -2,6 +2,7 @@ require "rest-client"
 require "json"
 
 require_relative "ticket.rb"
+require_relative "participant.rb"
 
 module Doattend
 	
@@ -39,6 +40,11 @@ module Doattend
 		# Use methods of Ticket class.
 		def ticket
 			Doattend::Ticket.new(self.result['participants'])
+		end
+
+		# Use methods of Participant class.
+		def participant
+			Doattend::Participant.new(self.result['participants'])
 		end
 
 	end
