@@ -35,14 +35,15 @@ If you are not using Rails you can use require to include it:
 
 		Non-Rails Way:
 		doattend = Doattend::Base.new('YOUR_DOATTEND_EVENT_ID', 'YOUR_DOATTEND_API_KEY')
+		
+		Fetch all data:
+		doattend.fetch
+		
 
 
 ## Methods
-### Tickets
-#### Fetch all data from DoAttend
-		doattend.fetch
-
-#### Get total tickets
+### Ticket
+#### Get total number of tickets
 		doattend.aggregate
 
 #### Get ticket names/types used in an event
