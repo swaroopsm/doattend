@@ -60,7 +60,7 @@ If you are not using Rails you can use require to include it:
 		doattend.participant.pluck('FIELD_NAME')
 
 		Eg.:
-		doattend.participant.plcuk('Gender')
+		doattend.participant.pluck('Gender')
 
 ## Contributing
 
