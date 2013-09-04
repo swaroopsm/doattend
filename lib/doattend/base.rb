@@ -1,6 +1,8 @@
 require "rest-client"
 require "json"
 
+require_relative "ticket.rb"
+
 module Doattend
 	
 	class Base
@@ -29,13 +31,16 @@ module Doattend
 			end
 		end
 
+		# Get Total Participants.
+		def aggregate
+			self.result['participants'].size
+		end
+
+		# Use methods of Ticket class.
+		def ticket
+			Ticket.new(self.result['participants'])
+		end
+
 	end
-
-	# Get Total Participants.
-	def aggregate
-		self.result['participants'].size
-	end
-
-
 
 end
