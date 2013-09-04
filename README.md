@@ -1,6 +1,6 @@
 # DoAttend
 
-Rails generator and functions to communicate the DoAttend API.
+Rails generator and functions to communicate the DoAttend API. You need to have a DoAttend API key to communicate the DoAttend API. If you do not have one yet, you can contact DoAttend to get an API key.
 
 ## Installation
 
@@ -18,7 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+As of now doattend is build as a dependency to Rails. 
+Run the following generator to generate config/doattend.yml
+		
+		$ rails g doattend:install -e YOUR_DOATTEND_EVENT_ID -k YOUR_DOATTEND_API_KEY
+
+## Methods
+### 1. Fetch all data from DoAttend:
+				$ Doattend.fetch
 
 ## Contributing
 
