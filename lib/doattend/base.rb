@@ -38,7 +38,7 @@ module Doattend
 
 		# Use methods of Ticket class.
 		def ticket
-			Ticket.new(self.result['participants'])
+			Doattend::Ticket.new(self.result['participants'])
 		end
 
 	end
