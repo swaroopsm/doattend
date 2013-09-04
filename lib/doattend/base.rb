@@ -31,4 +31,11 @@ module Doattend
 
 	end
 
+	# Get Total Participants.
+	def aggregate
+		self.result['participants'].size
+	end
+
+
+
 end
