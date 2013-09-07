@@ -24,6 +24,14 @@ module Doattend
 			self.result.select{ |p| p['Ticket_Number'] = ticket }.first
 		end
 
+		# Count occurences of key/value.
+		def ascertain(k, v)
+			if self.general_info.include? k
+				self.result.count{ |p| p[k] == v.downcase }				
+			else
+				self.result.map{ |p| p['participant_information'].select{ |i| i['desc'].strip.downcase == k.split('_').join(' ').downcase and i['info'].strip.downcase == v.downcase  } }.flatten.size
+			end
+		end
 
 	end
 
