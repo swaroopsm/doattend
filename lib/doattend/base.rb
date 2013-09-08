@@ -28,7 +28,7 @@ module Doattend
   		begin
   			self.result = JSON.parse(RestClient.get(url))
   		rescue Exception => e
-  			e
+  			raise e
 			end
 		end
 
