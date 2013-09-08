@@ -21,4 +21,8 @@ describe Doattend::Base do
 		@doattend.ticket.should be_instance_of Doattend::Ticket
 	end
 
+	it "#participant" do
+		@doattend.participant.should be_instance_of Doattend::Participant
+	end
+
 end
