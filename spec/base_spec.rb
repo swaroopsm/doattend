@@ -25,4 +25,16 @@ describe Doattend::Base do
 		@doattend.participant.should be_instance_of Doattend::Participant
 	end
 
+	context "tickets method" do
+		
+		it "ticket names should be an array" do
+			@doattend.ticket.names.should be_instance_of Array
+		end
+
+		it "should return the first ticket name" do
+			@doattend.ticket.names.first.should eq "Test Registration" 
+		end
+
+	end
+
 end
