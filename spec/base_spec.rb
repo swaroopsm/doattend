@@ -35,6 +35,10 @@ describe Doattend::Base do
 			@doattend.ticket.names.first.should eq "Test Registration" 
 		end
 
+		it "should return number of registrations for a ticket type" do
+			@doattend.ticket.aggregate(@doattend.ticket.names.first).should eq 8 
+		end
+
 	end
 
 end
