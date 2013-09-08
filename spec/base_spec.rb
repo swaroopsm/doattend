@@ -1,18 +1,16 @@
-require_relative "./spec_helper.rb"
-require_relative "../lib/doattend/base.rb"
+require "spec_helper"
+require "doattend/base"
 
 describe Doattend::Base do
 	
 	before(:all) do
-		@doattend = Doattend::Base.new("", "") # Pass Event ID and API Key as arguements.
+		@doattend = Doattend::Base.new
 	end
 	
-	it "does not raise an unauthorized exception" do
-		expect{ @doattend.fetch }.to_not raise_error
-	end
-
-	it "result attribute should be an instance of hash" do
-		 @doattend.result.should be_instance_of Hash
+	it "should fetch data from the API" do
+		canned_response = File.new('/var/www/wazzapp/zaapin-new/api.json')
+		stub_request(:get, @doattend.url).to_return(:body => canned_response)
+		@doattend.fetch
 	end
 
 end
