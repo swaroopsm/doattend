@@ -41,4 +41,12 @@ describe Doattend::Base do
 
 	end
 
+	context "participant methods" do
+		
+		it "should pluck all ticket numbers" do
+			@doattend.participant.pluck("Ticket_Number").should eq ["326817", "325434", "324549", "324521", "323367", "322474", "322085", "320774", "319951", "319165", "318800"]
+		end
+
+	end
+
 end
