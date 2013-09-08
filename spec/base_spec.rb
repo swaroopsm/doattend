@@ -8,9 +8,13 @@ describe Doattend::Base do
 	end
 	
 	it "should fetch data from the API" do
-		canned_response = File.new('/var/www/wazzapp/zaapin-new/api.json')
-		stub_request(:get, @doattend.url).to_return(:body => canned_response)
+		sample_response = File.new(File.expand_path('../example.json', __FILE__))
+		stub_request(:get, @doattend.url).to_return(:body => sample_response)
 		@doattend.fetch
+	end
+
+	it "should return the total participants" do
+		@doattend.aggregate.should eq 11
 	end
 
 end
