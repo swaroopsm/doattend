@@ -8,7 +8,7 @@ module Doattend
 	
 	class Base
 		
-		attr_accessor :event, :key, :result
+		attr_accessor :event, :key, :result, :url
 
 		def initialize(e=nil, k=nil)
 			if defined? Rails
@@ -19,12 +19,11 @@ module Doattend
 	  		self.event = e
 	  		self.key = k
 	  	end
-
+			self.url = "http://doattend.com/api/events/#{self.event}/participants_list.json?api_key=#{self.key}"
 		end
 		
 		# Request DoAttend and fetch results.
 		def fetch
-  		url = "http://doattend.com/api/events/#{self.event}/participants_list.json?api_key=#{self.key}"
   		begin
   			self.result = JSON.parse(RestClient.get(url))
   		rescue Exception => e
