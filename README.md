@@ -76,6 +76,12 @@ Run the following generator to generate config/doattend.yml
 		 Eg.:
 		 doattend.participant.registered.on(Date.new(2013,5,8))
 
+#### Return array of participant objects based on a single condition
+		 doattend.participant.where('KEY', 'VALUE')
+
+		 Eg.: 
+		 doattend.participant.where('Nationality', 'Indian')
+
 #### Pluck a field from all participants
 		doattend.participant.pluck('FIELD_NAME')
 
