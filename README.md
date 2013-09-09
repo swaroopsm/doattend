@@ -64,6 +64,18 @@ If you are not using Rails you can use require to include it:
 #### Find a participant by ticket number
 		 doattend.participant.find('TICKET_NUMBER')
 
+#### Ascertain whether a key == value
+		 doattend.participant.ascertain('KEY', 'VALUE')
+
+		 Eg.:
+		 doattend.participant.ascertain('Gender', 'Male')
+
+#### Return participant objects registered on a specfied date
+		 doattend.participant.registered.on(DATE_OBJECT)
+
+		 Eg.:
+		 doattend.participant.registered.on(Date.new(2013,5,8))
+
 #### Pluck a field from all participants
 		doattend.participant.pluck('FIELD_NAME')
 
