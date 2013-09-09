@@ -22,22 +22,6 @@ describe Doattend::Base do
 		@doattend.aggregate.should eq 11
 	end
 
-	context "tickets method" do
-		
-		it "ticket names should be an array" do
-			@doattend.ticket.names.should be_instance_of Array
-		end
-
-		it "should return the first ticket name" do
-			@doattend.ticket.names.first.should eq "Test Registration" 
-		end
-
-		it "should return number of registrations for a ticket type" do
-			@doattend.ticket.aggregate(@doattend.ticket.names.first).should eq 8 
-		end
-
-	end
-
 	context "participant methods" do
 		
 		it "should pluck all ticket numbers" do
