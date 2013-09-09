@@ -3,26 +3,23 @@ require "doattend/base"
 
 describe Doattend::Base do
 	
-	before(:all) do
+	before(:each) do
 		@doattend = Doattend::Base.new
-	end
-	
-	it "#fetch" do
 		sample_response = File.new(File.expand_path('../example.json', __FILE__))
 		stub_request(:get, @doattend.url).to_return(:body => sample_response)
-		@doattend.fetch
+		@doattend.fetch		
 	end
-
-	it "#aggregate" do
-		@doattend.aggregate.should eq 11
-	end
-
-	it "#ticket" do
+	
+	it "should be an instance of Ticket" do
 		@doattend.ticket.should be_instance_of Doattend::Ticket
 	end
 
-	it "#participant" do
+	it "should be an instance of Participant" do
 		@doattend.participant.should be_instance_of Doattend::Participant
+	end
+
+	it "should return total number of registrations" do
+		@doattend.aggregate.should eq 11
 	end
 
 	context "tickets method" do
