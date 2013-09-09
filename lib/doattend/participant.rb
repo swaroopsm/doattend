@@ -33,6 +33,16 @@ module Doattend
 			end
 		end
 
+		# Return participants who have registered on a particular date.
+		def registered
+			self
+		end
+
+		def on(date)
+			self.result.select{ |p| Date.iso8601(p['Date']).strftime == date.strftime }
+		end
+
+
 	end
 
 end
