@@ -18,8 +18,12 @@ describe Doattend::Participant do
 		@doattend.participant.find('326817').should be_kind_of Hash
 	end
 
-	it "should return" do
+	it "should return nil for an invalid ticket number" do
 		@doattend.participant.find('316117').should be_nil
+	end
+	
+	it "should return the number of occurrences who are male participants" do
+		@doattend.participant.ascertain('Gender', 'Male').should eq 8
 	end
 
 end
