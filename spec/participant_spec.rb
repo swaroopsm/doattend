@@ -30,4 +30,8 @@ describe Doattend::Participant do
 		@doattend.participant.ascertain('Nationality', 'Asgard').should eq 1
 	end
 
+	it "should return an array of participant objects for a given date" do
+		@doattend.participant.registered.on(Date.new(2013,5,8)).should be_kind_of Array
+	end
+
 end
