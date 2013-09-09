@@ -21,7 +21,7 @@ module Doattend
 		
 		# Default Participant Finder. Returns a participant having the specified ticket number.
 		def find(ticket)
-			self.result.select{ |p| p['Ticket_Number'] = ticket }.first
+			self.result.select{ |p| p['Ticket_Number'] == ticket }.first
 		end
 
 		# Count occurences of key/value.
