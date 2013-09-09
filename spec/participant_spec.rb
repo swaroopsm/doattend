@@ -26,4 +26,8 @@ describe Doattend::Participant do
 		@doattend.participant.ascertain('Gender', 'Male').should eq 8
 	end
 
+	it "should return the number of " do
+		@doattend.participant.ascertain('Nationality', 'Asgard').should eq 1
+	end
+
 end
