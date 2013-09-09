@@ -45,7 +45,8 @@ If you are not using Rails you can use require to include it:
 
 
 ## Methods
-### Ticket
+
+### 1. Ticket
 #### Get total number of tickets
 		doattend.aggregate
 
@@ -58,8 +59,12 @@ If you are not using Rails you can use require to include it:
 		Eg.:
 		doattend.ticket.aggregate(doattend.ticket.names.first)
 
-### Participants
-#### Pluck a field from all all participants
+### 2. Participants
+
+#### Find a participant by ticket number
+		 doattend.participant.find('TICKET_NUMBER')
+
+#### Pluck a field from all participants
 		doattend.participant.pluck('FIELD_NAME')
 
 		Eg.:
