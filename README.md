@@ -80,7 +80,7 @@ Run the following generator to generate config/doattend.yml
 		doattend.participant.pluck('FIELD_NAME')
 
 		Eg.:
-		doattend.participant.pluck('Gender')
+		doattend.participant.pluck('Email')
 
 ## Contributing
 
