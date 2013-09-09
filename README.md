@@ -64,7 +64,7 @@ Run the following generator to generate config/doattend.yml
 #### Find a participant by ticket number
 		 doattend.participant.find('TICKET_NUMBER')
 
-#### Ascertain whether a key == value
+#### Ascertain a count whether a key == value
 		 doattend.participant.ascertain('KEY', 'VALUE')
 
 		 Eg.:
