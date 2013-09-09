@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Doattend::VERSION
   spec.authors       = ["Swaroop SM"]
   spec.email         = ["swaroop.striker@gmail.com"]
-  spec.description   = %q{Communicating with DoAttend API}
-  spec.summary       = %q{This provides a rails generator and functions to communicate with the DoAttend API.}
+  spec.description   = %q{Methods to parse data from DoAttend API}
+  spec.summary       = %q{This provides a rails generator and functions to communicate and parse data from DoAttend API.}
   spec.homepage      = "https://github.com/swaroopsm/doattend"
   spec.license       = "MIT"
 
