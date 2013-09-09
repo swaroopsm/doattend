@@ -34,4 +34,8 @@ describe Doattend::Participant do
 		@doattend.participant.registered.on(Date.new(2013,5,8)).should be_kind_of Array
 	end
 
+	it "should return a participant object(s) based on a condition that is an Array" do
+		@doattend.participant.where('Gender', 'Male').should be_instance_of Array
+	end
+
 end
