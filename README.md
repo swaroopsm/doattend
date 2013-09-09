@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/swaroopsm/doattend.png?label=ready)](https://waffle.io/swaroopsm/doattend)  
 # DoAttend
 
 [![Gem Version](https://badge.fury.io/rb/doattend.png)](http://badge.fury.io/rb/doattend)
