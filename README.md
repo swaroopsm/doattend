@@ -24,12 +24,12 @@ Or install it yourself as:
 
 ## Usage
 
-Doattend provides a rails generator that gets you started quikly. 
+Doattend provides a rails generator that gets you started quickly. 
 Run the following generator to generate config/doattend.yml
 		
 		$ rails g doattend:install -e YOUR_DOATTEND_EVENT_ID -k YOUR_DOATTEND_API_KEY
 
-If you are not using Rails you can use require to include it:
+#####If you are not using Rails you can use require to include it:
 		$ require "doattend"
 
 ## Getting Started
