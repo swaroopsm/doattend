@@ -4,7 +4,7 @@ require "doattend/base"
 describe Doattend::Ticket do
 	
 	before(:each) do
-		@doattend = Doattend::Base.new
+		@doattend = Doattend::Base.new('EVENT_ID', 'API_KEY')
 		sample_response = File.new(File.expand_path('../example.json', __FILE__))
 		stub_request(:get, @doattend.url).to_return(:body => sample_response)
 		@doattend.fetch		
