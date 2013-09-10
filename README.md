@@ -4,7 +4,6 @@
 [![Code Climate](https://codeclimate.com/github/swaroopsm/doattend.png)](https://codeclimate.com/github/swaroopsm/doattend)
 [![Dependency Status](https://gemnasium.com/swaroopsm/doattend.png)](https://gemnasium.com/swaroopsm/doattend)
 [![Build Status](https://travis-ci.org/swaroopsm/doattend.png?branch=master)](https://travis-ci.org/swaroopsm/doattend)
-[![Stories in Ready](https://badge.waffle.io/swaroopsm/doattend.png?label=ready)](https://waffle.io/swaroopsm/doattend)  
 
 Rails generator and functions to communicate the DoAttend API. You need to have a DoAttend API key to communicate the DoAttend API. If you do not have one yet, you can contact DoAttend to get an API key.
 
