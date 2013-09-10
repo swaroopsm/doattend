@@ -25,11 +25,14 @@ module Doattend
 		end
 
 		# Count occurences of key/value.
+		# Looks like this method is redundant.
+		# TODO: Remove this in the next version
 		def ascertain(k, v)
 			if self.general_info.include? k
 				self.result.count{ |p| p[k] == v.downcase }				
 			else
-				self.result.map{ |p| p['participant_information'].select{ |i| i['desc'].strip.downcase == k.split('_').join(' ').downcase and i['info'].strip.downcase == v.downcase  } }.flatten.size
+				#self.result.map{ |p| p['participant_information'].select{ |i| i['desc'].strip.downcase == k.split('_').join(' ').downcase and i['info'].strip.downcase == v.downcase  } }.flatten.size
+				get_participant_info(k, v).size
 			end
 		end
 
@@ -47,7 +50,7 @@ module Doattend
 			if self.general_info.include? k
 				self.result.select{ |p| p[k].downcase == v.downcase }
 			else
-				get_participant_info(k.downcase, v.downcase)
+				get_participant_info(k.downcase, v)
 			end
 		end
 		
