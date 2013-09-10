@@ -47,14 +47,19 @@ module Doattend
 			if self.general_info.include? k
 				self.result.select{ |p| p[k].downcase == v.downcase }
 			else
-				participants = []
-				self.result.each do |p|
-					p['participant_information'].each do |pz|
-						participants << p if pz['desc'] == k and pz['info'].downcase == v.downcase
-					end
-				end
-				participants
+				get_participant_info(k.downcase, v.downcase)
 			end
+		end
+		
+		private
+		def get_participant_info(k, v)
+			participants = []
+			self.result.each do |p|
+				p['participant_information'].each do |pz|
+					participants << p if pz['desc'] == k and pz['info'].downcase == v.downcase
+				end
+			end
+			participants
 		end
 
 	end
