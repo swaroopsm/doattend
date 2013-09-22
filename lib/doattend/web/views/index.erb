@@ -1,1 +1,33 @@
-<%= @doattend.result.inspect %>
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Belleza' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://raw.github.com/jlukic/Semantic-UI/master/build/minified/elements/button.min.css" />
+	<link rel="stylesheet" href="https://raw.github.com/jlukic/Semantic-UI/master/build/minified/elements/divider.min.css" />
+	<style type="text/css">
+		body{
+			text-align: center;
+			background-image: url('/img/doattend.png');
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			font-family: 'Open Sans Condensed', sans-serif;
+			padding: 5%;
+		}
+		h1{
+			font-family: 'Belleza', sans-serif;
+			font-size: 50;
+			color: #615252;
+		}
+	</style>
+</head>
+<body>
+	<h1>DoAttend Registrations Glancer</h1>
+	<div class="ui divider"></div>
+	<div class="massive ui button teal">
+		Total Registrations <hr>
+		<%= @doattend.aggregate %>
+	</div>
+</body>
+</html>
