@@ -88,6 +88,15 @@ Run the following generator to generate config/doattend.yml
 		Eg.:
 		doattend.participant.pluck('Email')
 
+## Mounting to Rails
+This gem also specifies a web interface that lists all participants, which can be easily mounted to your Rails App(if you are using rails).
+1. Add 'sinatra' to your Gemfile
+	 	gem 'sinatra', :require => nil
+
+2. Specify the route in your config/routes.rb
+		require 'doattend'
+		mount Doattend::Web, :at => "/doattend"
+
 ## Contributing
 
 1. Fork it
