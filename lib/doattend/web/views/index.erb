@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>DoAttend Registrations Glancer</title>
 	<link href='http://fonts.googleapis.com/css?family=Belleza' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<%= request.env['SCRIPT_NAME'] %>/css/button.min.css" />
@@ -11,17 +12,13 @@
 	<style type="text/css">
 		body{
 			text-align: center;
-			background-image: url('/img/doattend.png');
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-size: 100%;
 			font-family: 'Open Sans Condensed', sans-serif;
-			padding: 5%;
+			padding: 3%;
 		}
 
 		h1{
 			font-family: 'Belleza', sans-serif;
-			font-size: 40pt;
+			font-size: 36pt;
 			color: #615252;
 		}
 
@@ -51,7 +48,7 @@
 		<% @doattend.participant.result.each do |d| %>
 			<tr>
 				<td><%= d['Ticket_Number'] %></td>
-				<td><%= d['Email'] %></td>
+				<td><a href="mailto: <%= d['Email'] %>"><%= d['Email'] %></a></td>
 				<td><%= Time.iso8601( d['Date'] ).localtime.strftime("%A, %e %B %Y") %></td>
 			</tr>
 		<% end %>
