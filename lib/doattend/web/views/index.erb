@@ -3,8 +3,11 @@
 <head>
 	<link href='http://fonts.googleapis.com/css?family=Belleza' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://raw.github.com/jlukic/Semantic-UI/master/build/minified/elements/button.min.css" />
-	<link rel="stylesheet" href="https://raw.github.com/jlukic/Semantic-UI/master/build/minified/elements/divider.min.css" />
+	<link rel="stylesheet" href="<%= request.env['SCRIPT_NAME'] %>/css/button.min.css" />
+	<link rel="stylesheet" href="<%= request.env['SCRIPT_NAME'] %>/css/divider.min.css" />
+	<link rel="stylesheet" href="<%= request.env['SCRIPT_NAME'] %>/css/table.min.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
 	<style type="text/css">
 		body{
 			text-align: center;
@@ -15,11 +18,18 @@
 			font-family: 'Open Sans Condensed', sans-serif;
 			padding: 5%;
 		}
+
 		h1{
 			font-family: 'Belleza', sans-serif;
-			font-size: 50;
+			font-size: 40pt;
 			color: #615252;
 		}
+
+		table{
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
 	</style>
 </head>
 <body>
@@ -29,5 +39,27 @@
 		Total Registrations <hr>
 		<%= @doattend.aggregate %>
 	</div>
+	<div class="ui divider"></div>
+	<h2>Participants</h2>
+	<table class="ui large table segment">
+  <thead>
+    <tr><th>Ticket</th>
+    <th>Email</th>
+    <th>Registered On</th>
+  </tr></thead>
+  <tbody>
+		<% @doattend.participant.result.each do |d| %>
+			<tr>
+				<td><%= d['Ticket_Number'] %></td>
+				<td><%= d['Email'] %></td>
+				<td><%= Time.iso8601( d['Date'] ).localtime.strftime("%A, %e %B %Y") %></td>
+			</tr>
+		<% end %>
+  </tbody>
+</table>
 </body>
+<script>
+	$('table').dataTable()
+	$("th").css({'text-align': 'center'})
+</script>
 </html>
